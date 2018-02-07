@@ -1,0 +1,27 @@
+{
+	"name": "mibadger/boilerplate",
+	"description": "The miBadger boilerplate",
+	"type": "project",
+	"keywords": [
+		"mibadger",
+		"boilerplate"
+	],
+	"homepage": "https://www.mibadger.com",
+	"license": "Apache-2.0",
+	"authors": [
+		{
+			"name": "Michael Webbers",
+			"email": "michael@webbers.io",
+			"homepage": "http://webbers.io"
+		}
+	],
+	"require": {
+		"php": "^7.0",
+		"mibadger/mibadger": "^1.0"
+	},
+	"autoload": {
+		"psr-4": {
+			"miBadger\\Boilerplate\\": "src/"
+		}
+	}
+}
