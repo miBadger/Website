@@ -7,7 +7,7 @@
  * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
  */
 
-namespace miBadger\Boilerplate\Model;
+namespace miBadger\Website\Model;
 
 /**
  * The page class.

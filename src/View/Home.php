@@ -13,9 +13,10 @@ use miBadger\Mvc\View;
 
 <?php echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]); ?>
 
-<div class="container">
-	<h1>Home</h1>
-	<p>Hello world!</p>
-</div>
+<?php echo View::get(__DIR__ . '/MainMenu.php'); ?>
+
+<?php echo View::get(__DIR__ . '/welcome.php'); ?>
+<?php echo View::get(__DIR__ . '/grid.php', ['components'=> $components] );  ?>
+
 
 <?php echo View::get(__DIR__ . '/Footer.php');  ?>

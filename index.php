@@ -19,7 +19,8 @@ use miBadger\Http\Session;
 use miBadger\Mvc\View;
 use miBadger\Router\Router;
 use miBadger\Settings\Settings;
-use miBadger\Boilerplate\Controller\Home;
+use miBadger\Website\Controller\Home;
+use miBadger\Website\Controller\Component;
 
 Session::start();
 
@@ -28,6 +29,15 @@ $router = new Router();
 $router->set('GET', '/', function () {
 	return (new Home())->indexAction();
 });
+
+$router->set('GET', '/{name}/', function($name) {
+    return (new Component())->indexAction($name);
+});
+
+/*
+$router->set('GET', '/welcome.php/{name}/', function($name) {
+    return (new Documentation())->indexAction($name);
+});*/
 
 try {
 	echo $router->resolve();

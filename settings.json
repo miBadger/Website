@@ -1,0 +1,45 @@
+{
+	"components": [{
+			"name": "ActiveRecord",
+			"icon": "file-spreadsheet"
+		}, {
+			"name": "Enum",
+			"icon": "list2"
+		}, {
+			"name": "Event",
+			"icon": "flag2"
+		}, {
+			"name": "File",
+			"icon": "file-text2"
+		}, {
+			"name": "Http",
+			"icon": "lan"
+		}, {
+			"name": "Log",
+			"icon": "file-download"
+		}, {
+			"name": "Mcv",
+			"icon": "insert-template"
+		}, {
+			"name": "Observer",
+			"icon": "eye"
+		}, {
+			"name": "Pagination",
+			"icon": "stack-text"
+		}, {
+			"name": "Query",
+			"icon": "database-edit2"
+		}, {
+			"name": "Router",
+			"icon": "direction"
+		}, {
+			"name": "Settings",
+			"icon": "wrench3"
+		}, {
+			"name": "Singleton",
+			"icon": "atom2"
+		}
+
+	]
+                   
+}

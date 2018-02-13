@@ -1,27 +1,30 @@
 {
-	"name": "mibadger/boilerplate",
-	"description": "The miBadger boilerplate",
+	"name": "mibadger/website",
+	"description": "The miBadger documentation website",
 	"type": "project",
 	"keywords": [
 		"mibadger",
-		"boilerplate"
+		"website"
 	],
 	"homepage": "https://www.mibadger.com",
 	"license": "Apache-2.0",
 	"authors": [
 		{
-			"name": "Michael Webbers",
-			"email": "michael@webbers.io",
-			"homepage": "http://webbers.io"
+			"name": "Barry Lagerburg",
+			"email": "b.lagerburg@miwebb.com",
+			"homepage": "http://miwebb.com"
 		}
 	],
 	"require": {
 		"php": "^7.0",
-		"mibadger/mibadger": "^1.0"
+		"mibadger/mibadger": "^1.0",
+		"knplabs/github-api": "^2.7",
+		"php-http/guzzle6-adapter": "^1.1",
+		"erusev/parsedown": "^1.6"
 	},
 	"autoload": {
 		"psr-4": {
-			"miBadger\\Boilerplate\\": "src/"
+			"miBadger\\Website\\": "src/"
 		}
 	}
 }

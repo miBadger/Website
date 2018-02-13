@@ -7,11 +7,12 @@
  * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
  */
 
-namespace miBadger\Boilerplate\Controller;
+namespace miBadger\Website\Controller;
 
-use miBadger\Boilerplate\Model\Page;
+use miBadger\Website\Model\Page;
 use miBadger\Mvc\ControllerInterface;
 use miBadger\Mvc\View;
+use miBadger\Settings\Settings;
 
 /**
  * The home class.
@@ -28,6 +29,14 @@ class Home implements ControllerInterface
 		$page = new Page();
 		$page->setTitle('Home');
 
-		return View::get(__DIR__ . '/../View/Home.php', ['page' => $page]);
+        
+        $settings= new Settings();
+        $settings->load(__DIR__. '/../../settings.json');
+        
+        
+
+        $components= $settings->get('components');
+		return View::get(__DIR__ . '/../View/Home.php', ['page' => $page, 'components' => $components]);
+        
 	}
 }
