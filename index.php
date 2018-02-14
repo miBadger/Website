@@ -21,18 +21,25 @@ use miBadger\Router\Router;
 use miBadger\Settings\Settings;
 use miBadger\Website\Controller\Home;
 use miBadger\Website\Controller\Component;
+use miBadger\Website\Controller\ComponentClass;
 
 Session::start();
 
 $router = new Router();
 
-$router->set('GET', '/', function () {
+$router->set('GET', '/', function () 
+    {
 	return (new Home())->indexAction();
-});
+    });
 
-$router->set('GET', '/{name}/', function($name) {
+$router->set('GET', '/{name}/', function($name) 
+    {
     return (new Component())->indexAction($name);
-});
+    });
+$router->set('GET', '/{name}/{doc}/', function($name,$doc) 
+    {
+    return (new ComponentClass())->indexAction($name,$doc);
+    });
 
 /*
 $router->set('GET', '/welcome.php/{name}/', function($name) {
@@ -41,8 +48,10 @@ $router->set('GET', '/welcome.php/{name}/', function($name) {
 
 try {
 	echo $router->resolve();
+   
 } catch (ServerResponseException $exception) {
-	if ($exception->getServerResponse()->getStatusCode() == 404) {
+	
+    if ($exception->getServerResponse()->getStatusCode() == 404) {
 		echo View::get(__DIR__ . '/src/View/404.php');
 	} else {
 		echo View::get(__DIR__ . '/src/View/Generic.php', ['exception' => $exception]);
@@ -50,7 +59,7 @@ try {
 } catch (Exception $exception) {
 	if (DEBUG) {
 		echo View::get(__DIR__ . '/src/View/Debug.php', ['exception' => $exception]);
-	} else {
+	}  else {
 		echo View::get(__DIR__ . '/src/View/Generic.php', ['exception' => $exception]);
 	}
 }

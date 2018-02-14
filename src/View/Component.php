@@ -10,38 +10,40 @@
 use miBadger\Mvc\View;
 
 ?>
-
     <?php echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]); ?>
     <?php echo View::get(__DIR__ . '/MainMenu.php'); ?>
 
 
     <nav class="sidebar sidebar--fixed">
         <ul class="sidebar__list">
-            <?php for($i = 0; $i < count($navItems); $i++): ?>
-            <?php $navItem = $navItems[$i]; ?>
+            <li class="sidebar__item sidebar__custom sidebar__head">
+                <?php echo  $name; ?>
+            </li>
+            <li class="sidebar__item sidebar__custom sidebar__head sidebar__introduction">
+                <a href="/<?php echo $name ?>/">Introduction</a>
+            </li>
+                <?php for($i = 0; $i < count($navItems); $i++): ?>
+                <?php $navItem = $navItems[$i]; ?>
             <li class="sidebar__item sidebar__custom">
-                <a href='#doc-<?php echo $i +1; ?>'>
-                    <?php echo $navItem; ?> </a>
+                <a href='/<?php echo $name ?>/<?php echo $navItem; ?>/'>
+                <?php echo $navItem; ?>
+                </a>
             </li>
             <?php endfor; ?>
         </ul>
     </nav>
-
-
     <div class="content-component">
-        <?php for($i = 0; $i < count($contents); $i++): ?>
-        
-        <div class="component-data" id="doc-<?php echo $i +1; ?>">
-            <?php
-            $homepage = file_get_contents($contents[$i]);
-            
-               $Parsedown = new Parsedown();
+        <div class="component-data">
 
-                echo $Parsedown->text($homepage); ?>
-           
-           
-           
-       </div>
-        <?php endfor; ?>
+            <?php $homepage = file_get_contents($readme);
+            //var_dump($readme);
+         
+            $Parsedown = new Parsedown();
+
+            echo $Parsedown->text($homepage); ?>
+
+
+
+        </div>
     </div>
 <?php echo View::get(__DIR__ . '/Footer.php');  ?>

@@ -16,59 +16,46 @@ use miBadger\Http\ServerResponse;
 use miBadger\Http\ServerResponseException;
 
 /**
- * The Component class.
+ * The ComponentClass class.
  *
  * @since 1.0.0
  */
-class Component implements ControllerInterface
+class ComponentClass implements ControllerInterface
 {
 	/**
 	 * The index action.
 	 */
-	public function indexAction($name)
+	public function indexAction($name,$doc)
 	{
-            
-
         
             $page = new Page();
             $miBadger='mibadger.';
             $link_for_info=$miBadger.$name;
         
-            // TODO Retrieve the miBadger component's data from GitHub done
+            //Retrieve the miBadger component's data from GitHub done
            $client = new \Github\Client();
         
             try { 
                     
                 $fileInfo = $client->api('repo')->contents()->show('miBadger', $link_for_info, 'docs', 'master'); 
-                
-                
                 $fileInfo_rm = $client->api('repo')->contents()->show('miBadger', $link_for_info);
                 
-               } catch (\Exception $e) {
-           // throw new ServerResponseException( new ServerResponse(404) );
-            die("github error?");
-        }
+            }catch (\Exception $e){
+            throw new ServerResponseException( new ServerResponse(404) );
+            }
         
         $navItems=[];
         
           for($i = 0; $i < count($fileInfo); $i++) {
-              $navItem = $fileInfo[$i]['name'];
-              $url= $fileInfo[$i]['download_url'];
-              $navItemsubstr= substr($navItem,0,-3);
-                array_push($navItems,$navItemsubstr );     
+                $navItem = $fileInfo[$i]['name'];
+                $url= $fileInfo[$i]['download_url'];
+                $navItemsubstr= substr($navItem,0,-3);
+                    if ($navItemsubstr == $doc) {
+                        $readme = $url;
+                        }
+                        array_push($navItems,$navItemsubstr );    
             } 
-        
-        for($i = 0; $i < count($fileInfo_rm); $i++) {
-            $path = $fileInfo_rm[$i]["path"];
-            
-            if ($path == "README.md") {
-              $downloadUrl = $fileInfo_rm[$i]["download_url"];  
-                break;
-            }
-        }
-      
-        $readme = $downloadUrl;
-       
+         
         $page->setTitle($name);
         return View::get(__DIR__ . '/../View/Component.php', [
             'page' => $page,
@@ -77,6 +64,7 @@ class Component implements ControllerInterface
             'readme'=> $readme
             
         ]);
- 
+
+    
 	}
 }

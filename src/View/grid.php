@@ -7,11 +7,11 @@
             </div>
         </div>
 
-        <div  class="row features">
+        <div class="row features">
 
 
-            <?php for($i = 0; $i < count($components); $i++): ?>
-            <?php $component = $components[$i]; ?>
+        <?php for($i = 0; $i < count($components); $i++): ?>
+        <?php $component = $components[$i]; ?>
 
             <div class="col-2 col-m-4 col-l-6">
                 <a href="/<?php echo $component['name']; ?>/">
@@ -23,7 +23,7 @@
                     </div>
                 </a>
             </div>
-            <?php endfor; ?>
+        <?php endfor; ?>
 
 
 
