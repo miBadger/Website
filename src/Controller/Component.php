@@ -22,47 +22,44 @@ use miBadger\Http\ServerResponseException;
  */
 class Component implements ControllerInterface
 {
-	/**
-	 * The index action.
-	 */
-	public function indexAction($name)
-	{
-            
-
+    /**
+     * The index action.
+     */
+    public function indexAction($name)
+    {
+        $page = new Page();
+        $miBadger='mibadger.';
+        $link_for_info=$miBadger.$name;
         
-            $page = new Page();
-            $miBadger='mibadger.';
-            $link_for_info=$miBadger.$name;
+        // TODO Retrieve the miBadger component's data from GitHub done
+        $client = new \Github\Client();
         
-            // TODO Retrieve the miBadger component's data from GitHub done
-           $client = new \Github\Client();
-        
-            try { 
-                    
-                $fileInfo = $client->api('repo')->contents()->show('miBadger', $link_for_info, 'docs', 'master'); 
+        try {
+            $fileInfo = $client->api('repo')->contents()->show('miBadger', $link_for_info, 'docs', 'master');
                 
                 
-                $fileInfo_rm = $client->api('repo')->contents()->show('miBadger', $link_for_info);
-                
-               } catch (\Exception $e) {
-           // throw new ServerResponseException( new ServerResponse(404) );
+            $fileInfo_rm = $client->api('repo')->contents()->show('miBadger', $link_for_info);
+        } catch (\Exception $e) {
+            // throw new ServerResponseException( new ServerResponse(404) );
             die("github error?");
         }
         
         $navItems=[];
         
-          for($i = 0; $i < count($fileInfo); $i++) {
-              $navItem = $fileInfo[$i]['name'];
-              $url= $fileInfo[$i]['download_url'];
-              $navItemsubstr= substr($navItem,0,-3);
-                array_push($navItems,$navItemsubstr );     
-            } 
+        $doclink='https://github.com/mibadger/miBadger.'.$name;
         
-        for($i = 0; $i < count($fileInfo_rm); $i++) {
+        for ($i = 0; $i < count($fileInfo); $i++) {
+            $navItem = $fileInfo[$i]['name'];
+            $url= $fileInfo[$i]['download_url'];
+            $navItemsubstr= substr($navItem, 0, -3);
+            array_push($navItems, $navItemsubstr);
+        }
+        
+        for ($i = 0; $i < count($fileInfo_rm); $i++) {
             $path = $fileInfo_rm[$i]["path"];
             
             if ($path == "README.md") {
-              $downloadUrl = $fileInfo_rm[$i]["download_url"];  
+                $downloadUrl = $fileInfo_rm[$i]["download_url"];
                 break;
             }
         }
@@ -74,9 +71,8 @@ class Component implements ControllerInterface
             'page' => $page,
             'name'=> $name,
             'navItems' =>$navItems,
-            'readme'=> $readme
-            
+            'readme'=> $readme,
+            'doclink'=> $doclink
         ]);
- 
-	}
+    }
 }

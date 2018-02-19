@@ -16,37 +16,37 @@ namespace miBadger\Website\Model;
  */
 class Page
 {
-	/** @var string|null The title. */
-	private $title;
+    /** @var string|null The title. */
+    private $title;
 
-	/**
-	 * Construct a page class.
-	 */
-	public function __construct()
-	{
-		$this->title = null;
-	}
+    /**
+     * Construct a page class.
+     */
+    public function __construct()
+    {
+        $this->title = null;
+    }
 
-	/**
-	 * Returns the title.
-	 *
-	 * @return string|null the title.
-	 */
-	public function getTitle()
-	{
-		return $this->title;
-	}
+    /**
+     * Returns the title.
+     *
+     * @return string|null the title.
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
 
-	/**
-	 * Set the title.
-	 *
-	 * @param string $title
-	 * @return $this
-	 */
-	public function setTitle($title)
-	{
-		$this->title = $title;
+    /**
+     * Set the title.
+     *
+     * @param string $title
+     * @return $this
+     */
+    public function setTitle($title)
+    {
+        $this->title = $title;
 
-		return $this;
-	}
+        return $this;
+    }
 }

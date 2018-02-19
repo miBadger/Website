@@ -16,7 +16,7 @@ use miBadger\Mvc\View;
 <?php echo View::get(__DIR__ . '/MainMenu.php'); ?>
 
 <?php echo View::get(__DIR__ . '/welcome.php'); ?>
-<?php echo View::get(__DIR__ . '/grid.php', ['components'=> $components] );  ?>
+<?php echo View::get(__DIR__ . '/grid.php', ['components'=> $components]);  ?>
 
 
 <?php echo View::get(__DIR__ . '/Footer.php');  ?>

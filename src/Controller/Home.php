@@ -21,13 +21,13 @@ use miBadger\Settings\Settings;
  */
 class Home implements ControllerInterface
 {
-	/**
-	 * The index action.
-	 */
-	public function indexAction()
-	{
-		$page = new Page();
-		$page->setTitle('Home');
+    /**
+     * The index action.
+     */
+    public function indexAction()
+    {
+        $page = new Page();
+        $page->setTitle('Home');
 
         
         $settings= new Settings();
@@ -36,7 +36,6 @@ class Home implements ControllerInterface
         
 
         $components= $settings->get('components');
-		return View::get(__DIR__ . '/../View/Home.php', ['page' => $page, 'components' => $components]);
-        
-	}
+        return View::get(__DIR__ . '/../View/Home.php', ['page' => $page, 'components' => $components]);
+    }
 }

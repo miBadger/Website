@@ -22,49 +22,44 @@ use miBadger\Http\ServerResponseException;
  */
 class ComponentClass implements ControllerInterface
 {
-	/**
-	 * The index action.
-	 */
-	public function indexAction($name,$doc)
-	{
+    /**
+     * The index action.
+     */
+    public function indexAction($name, $doc)
+    {
+        $page = new Page();
+        $miBadger='mibadger.';
+        $link_for_info=$miBadger.$name;
         
-            $page = new Page();
-            $miBadger='mibadger.';
-            $link_for_info=$miBadger.$name;
+        //Retrieve the miBadger component's data from GitHub done
+        $client = new \Github\Client();
         
-            //Retrieve the miBadger component's data from GitHub done
-           $client = new \Github\Client();
-        
-            try { 
-                    
-                $fileInfo = $client->api('repo')->contents()->show('miBadger', $link_for_info, 'docs', 'master'); 
-                $fileInfo_rm = $client->api('repo')->contents()->show('miBadger', $link_for_info);
-                
-            }catch (\Exception $e){
-            throw new ServerResponseException( new ServerResponse(404) );
-            }
-        
+        try {
+            $fileInfo = $client->api('repo')->contents()->show('miBadger', $link_for_info, 'docs', 'master');
+            $fileInfo_rm = $client->api('repo')->contents()->show('miBadger', $link_for_info);
+        } catch (\Exception $e) {
+            throw new ServerResponseException(new ServerResponse(404));
+        }
+        $doclink='https://github.com/mibadger/miBadger.'.$name.'/blob/master/src/'.$doc.'.php';
         $navItems=[];
         
-          for($i = 0; $i < count($fileInfo); $i++) {
-                $navItem = $fileInfo[$i]['name'];
-                $url= $fileInfo[$i]['download_url'];
-                $navItemsubstr= substr($navItem,0,-3);
-                    if ($navItemsubstr == $doc) {
-                        $readme = $url;
-                        }
-                        array_push($navItems,$navItemsubstr );    
-            } 
+        for ($i = 0; $i < count($fileInfo); $i++) {
+            $navItem = $fileInfo[$i]['name'];
+            $url= $fileInfo[$i]['download_url'];
+            $navItemsubstr= substr($navItem, 0, -3);
+            if ($navItemsubstr == $doc) {
+                $readme = $url;
+            }
+            array_push($navItems, $navItemsubstr);
+        }
          
         $page->setTitle($name);
         return View::get(__DIR__ . '/../View/Component.php', [
             'page' => $page,
             'name'=> $name,
             'navItems' =>$navItems,
-            'readme'=> $readme
-            
+            'readme'=> $readme,
+            'doclink'=> $doclink
         ]);
-
-    
-	}
+    }
 }

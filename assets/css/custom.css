@@ -34,10 +34,28 @@
     height: auto;
 }
 
+.link_to_git{
+    float:right;
+    
+}
+
+@media (max-width: 990px){
+    .sidebar.sidebar--fixed {
+        position: relative;
+        line-height: 15px;
+        top: 0px;
+    
+    }
+}
+
+.h1
+{
+    font-size: 2em;
+    margin: 0;  
+}
 .content-component 
 {
-    padding: 25px 125px 50px 50px;
-    margin-left: 300px;
+    padding: 0px 125px 50px 50px;
     font-size: 16px;
     line-height: 1.5;
     box-sizing: border-box;
@@ -47,21 +65,30 @@
 }
 
 .sidebar.sidebar--fixed 
-{
-    top: 110px;
+{   
+    margin-bottom: 20px; 
+    top: 160px;
     line-height: 15px;
-
+    z-index: 1;
 }
 
 .sidebar__head 
 {
+    
     font-size: 24px;
     color: cadetblue;
 
 }
 
+.octocat{  
+
+    width: 32px;
+    height: 32px;
+}
+
 .sidebar .sidebar__custom 
 {
+    line-height: 15px;
     cursor: default;
 
 }
