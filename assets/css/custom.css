@@ -36,7 +36,8 @@
 
 .link_to_git{
     float:right;
-    
+    padding-top: 40px;
+    padding-right: 20px;
 }
 
 @media (max-width: 990px){
@@ -67,7 +68,7 @@
 .sidebar.sidebar--fixed 
 {   
     margin-bottom: 20px; 
-    top: 160px;
+    top: 200 px;
     line-height: 15px;
     z-index: 1;
 }
