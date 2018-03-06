@@ -53,11 +53,18 @@ use miBadger\Mvc\View;
             </div>
         </div>
     <div class="col-3">
-        <a class="link link--gray link_to_git" href="<?php echo $doclink; ?>" >
-            <img class="octocat" alt="octocat" src="/assets/images/GH.png" >
-             view on  Github.
+        <div class="link_to_git col-12">
+        <a class="link link--gray " href="<?php echo $doclink; ?>" >
+            <div class="plaatje column-mobile-12">
+                            <a href="https://github.com/metascriptio" class="footer-image">
+                                <span class="icon icon-github"></span>
+                               
+                                Github
+                                
+                            </a>
+                        </div>
         </a>
-        
+        </div>
 
     </div>
          

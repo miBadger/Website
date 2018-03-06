@@ -25,8 +25,6 @@
         <script src="/assets/js/jquery.waypoints.js"></script>
         <script src="/assets/js/menu.js"></script>
         <script src="/assets/js/mobile-menu.js"></script>
-        <script src="/assets/js/video.js"></script>
-        <script src="/assets/js/style-switcher.js"></script>
         <script src="/assets/js/custom.js"></script>
 
     </body>
