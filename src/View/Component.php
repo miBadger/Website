@@ -56,7 +56,7 @@ use miBadger\Mvc\View;
         <div class="link_to_git col-12">
         <a class="link link--gray " href="<?php echo $doclink; ?>" >
             <div class="plaatje column-mobile-12">
-                            <a href="https://github.com/metascriptio" class="footer-image">
+                            <a href="https://github.com/mibadger/<?php echo $name ?>/" class="footer-image">
                                 <span class="icon icon-github"></span>
                                
                                 Github

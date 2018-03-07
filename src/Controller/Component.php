@@ -36,13 +36,24 @@ class Component implements ControllerInterface
         
         try {
             $fileInfo = $client->api('repo')->contents()->show('miBadger', $link_for_info, 'docs', 'master');
-                
-                
+            
             $fileInfo_rm = $client->api('repo')->contents()->show('miBadger', $link_for_info);
-        } catch (\Exception $e) {
-            // throw new ServerResponseException( new ServerResponse(404) );
-            die("github error?");
+            
+            
+        } catch(\Github\Exception\ApiLimitExceedException $e ){
+            //ret new ServerResponseException( new ServerResponse('serverdown') )
+            return View::get(__DIR__ . '/../View/serverdown.php');
+        
+            
+            
+        } catch (\Github\Exception\RuntimeException $e)  {
+            //var_dump($e);
+             throw new ServerResponseException( new ServerResponse(404) );
+            
         }
+        
+        
+        //(\Exception $e)
         
         $navItems=[];
         

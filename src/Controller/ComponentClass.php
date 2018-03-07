@@ -37,7 +37,7 @@ class ComponentClass implements ControllerInterface
         try {
             $fileInfo = $client->api('repo')->contents()->show('miBadger', $link_for_info, 'docs', 'master');
             $fileInfo_rm = $client->api('repo')->contents()->show('miBadger', $link_for_info);
-        } catch (\Exception $e) {
+        } catch (\Github\Exception\RuntimeException $e) {
             throw new ServerResponseException(new ServerResponse(404));
         }
         $doclink='https://github.com/mibadger/miBadger.'.$name.'/blob/master/src/'.$doc.'.php';
