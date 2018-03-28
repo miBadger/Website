@@ -3,14 +3,13 @@
 /**
  * This file is part of the miBadger package.
  *
- * @author Michael Webbers <michael@webbers.io>
+ * @author Barry Lagerburg barrytwee@gmail.com
  * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
  */
 
 ?>
                 </div>
             </div>
-        </header>
         <div class="footer">
             <div class="container">
                 <div class="row">
@@ -25,7 +24,6 @@
         <script src="/assets/js/jquery.waypoints.js"></script>
         <script src="/assets/js/menu.js"></script>
         <script src="/assets/js/mobile-menu.js"></script>
-        <script src="/assets/js/custom.js"></script>
 
     </body>
 

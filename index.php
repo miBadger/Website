@@ -1,4 +1,10 @@
 <?php
+/**
+ * This file is part of the miBadger package.
+ *
+ * @author Barry Lagerburg barrytwee@gmail.com
+ * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
+ */
 
 define('DEBUG', true);
 
@@ -18,10 +24,8 @@ use miBadger\Http\ServerResponseException;
 use miBadger\Http\Session;
 use miBadger\Mvc\View;
 use miBadger\Router\Router;
-use miBadger\Settings\Settings;
 use miBadger\Website\Controller\Home;
 use miBadger\Website\Controller\Component;
-use miBadger\Website\Controller\ComponentClass;
 
 Session::start();
 
@@ -32,16 +36,11 @@ $router->set('GET', '/', function () {
 });
 
 $router->set('GET', '/{name}/', function ($name) {
-    return (new Component())->indexAction($name);
+    return (new Component())->readmeAction($name);
 });
-$router->set('GET', '/{name}/{doc}/', function ($name, $doc) {
-    return (new ComponentClass())->indexAction($name, $doc);
+ $router->set('GET', '/{name}/{doc}/', function ($name, $doc) {
+    return (new Component())->docsAction($name, $doc);
 });
-
-/*
-$router->set('GET', '/welcome.php/{name}/', function($name) {
-    return (new Documentation())->indexAction($name);
-});*/
 
 try {
     echo $router->resolve();

@@ -1,11 +1,12 @@
-.header-home .header-home__btns-mobile {
-    margin-bottom: 55px;
-}
 
-#components {
-    padding-top: 85px;
-}
+/**
+ * This file is part of the miBadger package.
+ *
+ * @author Barry Lagerburg barrytwee@gmail.com
+ * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
+ */
 
+/*general*/
 @font-face {
     font-family: 'IcoMoon-Ultimate';
     src: url('../fonts/IcoMoon-Ultimate.ttf') format('truetype');
@@ -13,40 +14,19 @@
     font-style: normal;
 }
 
-.features .features__title {
-    font-size: 26px;
-    width: 100%;
-    height: 30px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+
+
+/*header*/
+
+.menu__logo {
+    bottom: 23px;
+
 }
 
-.features__card .icon {
-    font-size: 80px;
-    color: #7d93b2;
-}
 
-.features .features__card {
-    padding: 60px 10px 40px;
-    cursor: pointer;
-    height: auto;
-}
 
-.link_to_git {
-    float: right;
-    padding-top: 28px;
-    padding-right: 20px;
-    text-align: center;
-}
-
-@media (max-width: 990px) {
-    .sidebar.sidebar--fixed {
-        position: relative;
-        line-height: 15px;
-        top: 0px;
-
-    }
+.header-home .header-home__btns-mobile {
+    margin-bottom: 55px;
 }
 
 .logo {
@@ -58,55 +38,35 @@
     left: 169px;
 }
 
-.h1 {
-    font-size: 2em;
+.svg-logo {
+    width: 100px;
+    height: 100px;
+    fill: #a485f2;
+}
+
+.text-logo {
+    color: #a485f2;
+    padding-bottom: 10px;
+}
+
+.menu .menu__logo-title {
+    font-weight: 800;
+    padding-left: 15px;
     margin: 0;
+    vertical-align: top;
+    margin-top: 28px;
+    opacity: 1;
+    color: #a485f2;
 }
 
-.content-component {
-    padding: 0px 125px 50px 50px;
-    font-size: 16px;
-    line-height: 1.5;
-    box-sizing: border-box;
-    display: block;
-    color: #24292e;
 
-}
 
-.sidebar.sidebar--fixed {
-    margin-bottom: 20px;
-    top: 194px;
-    line-height: 15px;
-    z-index: 1;
-}
+/*header @media*/
 
-.sidebar__head {
-
-    font-size: 24px;
-    color: cadetblue;
-
-}
-
-.octocat {
-
-    width: 32px;
-    height: 32px;
-}
-
-.sidebar .sidebar__custom {
-    line-height: 15px;
-    cursor: default;
-
-}
-
-.component-data {
-    margin-bottom: 100px;
-
-}
-
-.menu__logo {
-    bottom: 23px;
-
+@media(max-width: 1024px) {
+     .menu__logo-title {
+        display: none;
+    }
 }
 
 @media(max-width: 477px) {
@@ -121,34 +81,101 @@
     }
 }
 
-.svg-logo {
-    width: 100px;
-    height: 100px;
-    color: #a485f2;
-    fill: #a485f2;
+
+
+
+/*body*/
+
+
+/* component cards */
+
+
+.features .features__title
+{
+    font-size: 26px;
+    width: 100%;
+    height: 30px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
 
-.text-logo {
-    color: #a485f2;
-    animation: rotateColor 15s linear infinite;
-    padding-bottom: 10px;
+.features__card .icon
+{
+    font-size: 80px;
+    color: #7d93b2;
 }
 
-.menu .menu__logo-title {
-    font-weight: 800;
-    padding-left: 15px;
-    margin: 0;
-    vertical-align: top;
-    margin-top: 28px;
-    opacity: 1;
-    color: #a485f2;
+.features .features__card
+{
+    padding: 60px 10px 40px;
+    cursor: pointer;
+    height: auto;
+}
+.component-data
+{
+margin-bottom: 100px;
+
 }
 
-@media(max-width: 1024px) {
-     .menu__logo-title {
-        display: none;
+#components
+{
+padding-top: 85px;
+}
+
+
+
+/* /component cards */
+
+
+
+.sidebar.sidebar--fixed
+{ 
+    top: inherit;
+}
+
+.sidebar__head  
+{
+    font-size: 24px;
+    color:cadetblue;
+    
+} 
+
+.link_to_git 
+{
+    float: right;
+    padding-top: 28px;
+    padding-right: 20px;
+    text-align: center;
+}
+
+.octocat 
+{
+    width: 32px;
+    height: 32px;
+}
+
+.sidebar .sidebar__custom 
+{
+    line-height: 2px;
+}
+
+
+
+/*body @media*/
+
+@media (max-width: 990px) 
+{
+    .sidebar.sidebar--fixed {
+        position: relative;
+        line-height: 15px;
+        top: 0px;
+
     }
 }
+
+/*footer*/
+
 .footer-image {
     font-size: 20px;
     margin-right: 20px;
@@ -156,10 +183,11 @@
     padding-left: 149px;
 }
 
-.Ftext{
-    padding-left: 1px;
-}
 
+/*footer @media*/
+
+
+/* misc */
 .octorick{
 align-content: center;
     width: 700px;
