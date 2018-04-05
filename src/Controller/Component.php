@@ -118,7 +118,7 @@ class Component implements ControllerInterface
             'name'=> $name,
             'navItems' =>$navItems,
             'docUrl' => $pageUrl,
-            'docLink'=> $doclink,
+            'docLink'=> $docLink,
         ]);
     }
 }
