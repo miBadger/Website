@@ -24,6 +24,15 @@ class Home implements ControllerInterface
     /**
      * The index action.
      */
+    
+    
+    
+    
+    
+
+    
+    
+    
     public function indexAction()
     {
         $page = new Page();
@@ -37,5 +46,8 @@ class Home implements ControllerInterface
 
         $components= $settings->get('components');
         return View::get(__DIR__ . '/../View/Home.php', ['page' => $page, 'components' => $components]);
+        
+        
+        
     }
 }

@@ -26,7 +26,7 @@ use miBadger\Mvc\View;
 use miBadger\Router\Router;
 use miBadger\Website\Controller\Home;
 use miBadger\Website\Controller\Component;
-
+use miBadger\Website\Controller\GettingStarted;
 Session::start();
 
 $router = new Router();
@@ -35,9 +35,14 @@ $router->set('GET', '/', function () {
     return (new Home())->indexAction();
 });
 
+$router->set('GET', '/getting-started/', function(){
+   return (new GettingStarted())->mibadgerReadmeAction();
+});
+      
 $router->set('GET', '/{name}/', function ($name) {
     return (new Component())->readmeAction($name);
 });
+
  $router->set('GET', '/{name}/{doc}/', function ($name, $doc) {
     return (new Component())->docsAction($name, $doc);
 });

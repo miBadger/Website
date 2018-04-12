@@ -96,7 +96,6 @@ class Component implements ControllerInterface
         $docLink='https://github.com/mibadger/miBadger.'.$name.'/blob/master/src/'.$doc.'.php';
         
         $navItems=[];
-        
         for ($i = 0; $i < count($repositoryDocsList); $i++) {
             $repositoryDoc = $repositoryDocsList[$i];
             

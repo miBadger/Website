@@ -34,7 +34,7 @@
             <div class="col-4 col-t-8">
                 <nav class="menu__left-nav d-l-none">
                     <ul>
-                        <li><a href="#components" class="site-btn site-btn--accent">Get started</a></li>
+                        <li><a href="/getting-started/" class="site-btn site-btn--accent">Get started</a></li>
                     </ul>
                 </nav>
                 <div class="d-none d-t-block">

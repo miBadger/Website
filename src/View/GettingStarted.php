@@ -7,19 +7,32 @@
  * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
  */
 
+namespace miBadger\Website\Controller;
+
+use miBadger\Website\Model\Page;
+use miBadger\Mvc\ControllerInterface;
 use miBadger\Mvc\View;
+use miBadger\Settings\Settings;
 
-?>
-    <?php echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]); ?>
+/**
+ * The home class.
+ *
+ * @since 1.0.0
+ */
+class Home implements ControllerInterface
+{
+    /**
+     * The index action.
+     */
+    
+     <?php echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]); ?>
     <?php echo View::get(__DIR__ . '/MainMenu.php'); ?>
-
-    <header class="header-home col-12 ">
+    
+<header class="header-home col-12 ">
 
     </header>
 
-
-    <div class="col-3 col-t-12">
-        <?php if($name !== null){ ?>
+ <div class="col-3 col-t-12">
         <nav class="sidebar sidebar--fixed ">
             <ul class="sidebar__list">
                 <li class="sidebar__item sidebar__custom sidebar__head">
@@ -28,8 +41,8 @@ use miBadger\Mvc\View;
                 <li class="sidebar__item sidebar__custom sidebar__head sidebar__introduction">
                     <a href="/<?php echo $name ?>/">Introduction</a>
                 </li>
-                <?php for ($i = 0; $i < count($navItems); $i++): 
-                 $navItem = $navItems[$i]; ?>
+                <?php for ($i = 0; $i < count($navItems); $i++): ?>
+                <?php $navItem = $navItems[$i]; ?>
                 <li class="sidebar__item sidebar__custom">
                     <a href='/<?php echo $name ?>/<?php echo $navItem; ?>/'>
                         <?php echo $navItem; ?>
@@ -38,8 +51,8 @@ use miBadger\Mvc\View;
                 <?php endfor; ?>
             </ul>
         </nav>
-        <?php  } ?>
     </div>
+
     <div class="content-component component-data container col-6 ">
 
         <?php
