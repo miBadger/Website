@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
 	RewriteEngine On
 
+    RewriteCond %{HTTPS} off
+    RewriteRule (.*) https://%{SERVER_NAME}/$1 [R,L]
 	# Hide config folder
 	RewriteRule ^config(/.*|)$ $1 [L,NC]
 
