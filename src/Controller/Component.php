@@ -25,44 +25,41 @@ class Component implements ControllerInterface
     /**
      * this action returns the readme contents.
      */
+    
+    
+    
     public function readmeAction($name) 
-    {
+    {   
+        
         $page = new Page();
         $client = new \Github\Client();
         
         $componentRepositoryName = 'mibadger.' . $name;
         
         try {
-            $repositoryDocsList = $client->api('repo')->contents()->show('miBadger', $componentRepositoryName, 'docs', 'master');
+            $repositoryDocsList = $client->api('repo')->contents()->show('miBadger', $componentRepositoryName,'docs','master');
             
-            $repositoryRootContent = $client->api('repo')->contents()->show('miBadger', $componentRepositoryName); 
+            
         } catch(\Github\Exception\ApiLimitExceedException $e ){
             return View::get(__DIR__ . '/../View/serverdown.php');  
         } catch (\Github\Exception\RuntimeException $e)  {
              throw new ServerResponseException( new ServerResponse(404) );
         }
         
+        
+        
         $navItems = [];
         
         for ($i = 0; $i < count($repositoryDocsList); $i++) {
             $repositoryDoc = $repositoryDocsList[$i];
-            
             $docFileName = $repositoryDoc['name'];
-            
             $docName = substr($docFileName, 0, -3); //remove extension
-            
             array_push($navItems, $docName);
         }
+         
         
-        for ($i = 0; $i < count($repositoryRootContent); $i++) { 
-            $fileName = $repositoryRootContent[$i];
-            
-            if ($fileName["path"] == "README.md") {
-                $pageUrl = $fileName["download_url"];
-                break;
-            }
-        }
-      
+       $repositoryRootContent = 'https://raw.githubusercontent.com/miBadger/miBadger.'.$name.'/master/README.md';
+        $docUrl = $repositoryRootContent;
         $repositoryLink = 'https://github.com/mibadger/miBadger.' . $name;
         $page->setTitle($name);
         
@@ -70,8 +67,7 @@ class Component implements ControllerInterface
             'page' => $page,
             'name' => $name,
             'navItems' => $navItems,
-            'docUrl' => $pageUrl,
-            'docLink' => $repositoryLink
+            'docUrl' => $docUrl
         ]);   
     }
     
@@ -80,44 +76,56 @@ class Component implements ControllerInterface
      */
     public function docsAction($name, $doc)
     {
+        $file = __DIR__."/../../temp/".$name;
         $page = new Page();
         $client = new \Github\Client();
-
+        $time = time();
+        $lastModified = filemtime($file);
         $componentRepositoryName = 'mibadger.' . $name;
+      
         
-        try {
-            $repositoryDocsList = $client->api('repo')->contents()->show('miBadger', $componentRepositoryName, 'docs', 'master');
-        } catch (\Github\Exception\RuntimeException $e) {
-            throw new ServerResponseException(new ServerResponse(404));
-        } catch(\Github\Exception\ApiLimitExceedException $e ){
-            return View::get(__DIR__ . '/../View/serverdown.php'); 
+       
+        if (file_exists($file) == true && $lastModified - $time > 7200 ){
+                $repositoryDocsListCache = file_get_contents(__DIR__."/../../temp/".$name, true );
+                $repositoryDocsList = unserialize($repositoryDocsListCache);
+            } else {
+                try {
+                    $repositoryDocsList = $client->api('repo')->contents()->show('miBadger', $componentRepositoryName, 'docs', 'master');
+                } catch (\Github\Exception\RuntimeException $e) {
+                    throw new ServerResponseException(new ServerResponse(404));
+                } catch(\Github\Exception\ApiLimitExceedException $e ){
+                    return View::get(__DIR__ . '/../View/serverdown.php'); 
+                } 
         }
-        
         $docLink='https://github.com/mibadger/miBadger.'.$name.'/blob/master/src/'.$doc.'.php';
         
         $navItems=[];
         for ($i = 0; $i < count($repositoryDocsList); $i++) {
             $repositoryDoc = $repositoryDocsList[$i];
-            
             $docFileName = $repositoryDoc['name'];
             $docUrl = $repositoryDoc['download_url'];
-            
             $docName = substr($docFileName, 0, -3); //remove extension
             
             if ($docName == $doc) {
                 $pageUrl = $docUrl;
             }
             array_push($navItems, $docName);
-        }
-
-        $page->setTitle($name);
+        }    
         
+        if (file_exists($file)==false || $lastModified - $time <= 7200){
+            $fileForSave = serialize($repositoryDocsList);
+            file_put_contents($file,$fileForSave);
+        }
+        $page->setTitle($name);
+            
+
         return View::get(__DIR__ . '/../View/Component.php', [
             'page' => $page,
             'name'=> $name,
             'navItems' =>$navItems,
             'docUrl' => $pageUrl,
             'docLink'=> $docLink,
+            
         ]);
     }
 }

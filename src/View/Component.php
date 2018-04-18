@@ -44,12 +44,15 @@ use miBadger\Mvc\View;
 
         <?php
                 $homepage = file_get_contents($docUrl);
-
+            
                 $Parsedown = new Parsedown();
 
                 echo $Parsedown->text($homepage); 
-            ?>
-
+            
+        
+        
+        ?>
+                
     </div>
     <div class="col-3">
         <div class="link_to_git col-12">
