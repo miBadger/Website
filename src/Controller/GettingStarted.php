@@ -32,7 +32,7 @@ class GettingStarted implements ControllerInterface
         $repositoryLink = 'https://github.com/mibadger/miBadger/';
         $page->setTitle("getting started!");
         
-        return View::get(__DIR__ . '/../View/Component.php', [
+        return View::get(__DIR__ . '/../View/GettingStarted.php', [
             'page' => $page,
             'name' => null,
             'navItems' => null,

@@ -20,18 +20,8 @@
                     <p class="menu__logo-title">miBadger</p>
                 	</a>
             </div>
-            <div class="col-4 d-t-none">
-                <nav class="menu__center-nav">
-                    <ul>
-                        <li>
-
-                            <a href="/" class="link link--gray menu__dropdown-btn">Home</a>
-                        </li>
-                        <li><a href="/#components" class="link link--gray">Docs</a></li>
-                    </ul>
-                </nav>
-            </div>
-            <div class="col-4 col-t-8">
+            
+            <div class="col-4 col-t-12 col-m-12">
                 <nav class="menu__left-nav d-l-none">
                     <ul>
                         <li><a href="/getting-started/" class="site-btn site-btn--accent">Get started</a></li>
@@ -71,15 +61,7 @@
     <button type="button" class="mobile-menu__close">
 			<span><i class="mdi mdi-close" aria-hidden="true"></i></span>
     </button>
-    <nav class="mobile-menu__wrapper">
-        <ul class="mobile-menu__ul">
-            <li class="mobile-menu__li mobile-menu__li-collapse">
-                <a class="link link--dark-gray">
-                    Home
-				</a>
-            </li>
-        </ul>
-    </nav>
+    
 </div>
 
 <!--Mobile menu-->

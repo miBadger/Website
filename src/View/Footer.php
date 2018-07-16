@@ -14,7 +14,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p>© 2018 miWebb – miBadger | Made by Barry Lagerburg
+                        <p>© <?php echo date("Y"); ?> miWebb – miBadger 
 
                     </div>
                 </div>

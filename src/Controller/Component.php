@@ -63,11 +63,16 @@ class Component implements ControllerInterface
         $repositoryLink = 'https://github.com/mibadger/miBadger.' . $name;
         $page->setTitle($name);
         
+       
+             $docLink = 'https://github.com/miBadger/miBadger.'.$name.'/blob/master/README.md';
+         
+        
         return View::get(__DIR__ . '/../View/Component.php', [
             'page' => $page,
             'name' => $name,
             'navItems' => $navItems,
-            'docUrl' => $docUrl
+            'docUrl' => $docUrl,
+            'docLink' => $docLink
         ]);   
     }
     
@@ -117,7 +122,7 @@ class Component implements ControllerInterface
             file_put_contents($file,$fileForSave);
         }
         $page->setTitle($name);
-            
+         
 
         return View::get(__DIR__ . '/../View/Component.php', [
             'page' => $page,

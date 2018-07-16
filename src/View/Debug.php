@@ -11,11 +11,11 @@ use miBadger\Mvc\View;
 
 ?>
 
-<?php echo View::get(__DIR__ . '/Header.php', ['title' => 'Debug']); ?>
+
 
 <div class="container">
 	<h1>Debug</h1>
 	<pre><?php print_r($exception); ?></pre>
 </div>
 
-<?php echo View::get(__DIR__ . '/Footer.php'); ?>
+
