@@ -17,30 +17,15 @@ class Home implements ControllerInterface
     /**
      * The index action.
      */
-
-
-
-
-
-
-
-
-
     public function indexAction()
     {
         $page = new Page();
         $page->setTitle('Home');
 
-
         $settings= new Settings();
         $settings->load(__DIR__. '/../../settings.json');
 
-
-
         $components= $settings->get('components');
         return View::get(__DIR__ . '/../View/Home.php', ['page' => $page, 'components' => $components]);
-
-
-
     }
 }

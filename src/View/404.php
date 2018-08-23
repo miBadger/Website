@@ -1,12 +1,7 @@
 <?php
-
-
-
 use miBadger\Mvc\View;
-
+echo View::get(__DIR__ . '/Header.php', ['title' => 'Page not found']);
 ?>
-
-<?php echo View::get(__DIR__ . '/Header.php', ['title' => 'Page not found']); ?>
 
 <div class="container">
 	<h1>Page not found</h1>

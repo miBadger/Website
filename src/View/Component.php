@@ -1,17 +1,11 @@
 <?php
-
-
-
 use miBadger\Mvc\View;
-
+echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]);
+echo View::get(__DIR__ . '/MainMenu.php');
 ?>
-<?php echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]); ?>
-<?php echo View::get(__DIR__ . '/MainMenu.php'); ?>
 
 <header class="header-home col-12 ">
-
 </header>
-
 
 <div class="col-3 col-t-12">
   <?php if($name !== null){ ?>
@@ -33,19 +27,13 @@ use miBadger\Mvc\View;
   <?php  } ?>
 </div>
 <div class="content-component component-data container col-6 ">
-
   <?php
   $homepage = file_get_contents($docUrl);
-
   $Parsedown = new Parsedown();
-
   echo $Parsedown->text($homepage);
-
-
-
   ?>
-
 </div>
+
 <div class="col-3">
   <div class="link_to_git col-12">
     <div>
@@ -55,7 +43,6 @@ use miBadger\Mvc\View;
       </a>
     </div>
   </div>
-
 </div>
 
 <?php echo View::get(__DIR__ . '/Footer.php');  ?>

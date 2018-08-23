@@ -1,9 +1,8 @@
-
-
 /*general*/
 h1 {
-    color: #4c6280;
+  color: #4c6280;
 }
+
 h3{
   margin-top: 15px;
   margin-bottom: 5px;
@@ -13,232 +12,222 @@ a{
   color: #2a75e6;
 }
 @font-face {
-    font-family: 'IcoMoon-Ultimate';
-    src: url('../fonts/IcoMoon-Ultimate.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'IcoMoon-Ultimate';
+  src: url('../fonts/IcoMoon-Ultimate.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
 }
 
 .header-home .header-home__title
 {
-    line-height: 58px;
+  line-height: 58px;
 }
-/*header*/
 
 .code-image
 {
-    float: right;
-    width: 60%;
-    /* margin-top: -400px; */
+  float: right;
+  width: 60%;
 }
 
 .menu__logo {
-    bottom: 23px;
+  bottom: 23px;
 }
 
 .header-home .header-home__btns-mobile {
-    margin-bottom: 55px;
+  margin-bottom: 55px;
 }
 
 .logo {
-    width: 300px;
-    height: 90px;
-    z-index: 101;
-    position: fixed;
-    top: 2px;
-    left: 169px;
+  width: 300px;
+  height: 90px;
+  z-index: 101;
+  position: fixed;
+  top: 2px;
+  left: 169px;
 }
 
 .svg-logo {
-    width: 100px;
-    height: 100px;
-    fill: #a485f2;
+  width: 100px;
+  height: 100px;
+  fill: #a485f2;
 }
 
 .text-logo {
-    color: #a485f2;
-    padding-bottom: 10px;
+  color: #a485f2;
+  padding-bottom: 10px;
 }
 
 .menu .menu__logo-title {
-    font-weight: 800;
-    padding-left: 15px;
-    margin: 0;
-    vertical-align: top;
-    margin-top: 28px;
-    opacity: 1;
-    color: #a485f2;
-    position: absolute;
+  font-weight: 800;
+  padding-left: 15px;
+  margin: 0;
+  vertical-align: top;
+  margin-top: 28px;
+  opacity: 1;
+  color: #a485f2;
+  position: absolute;
 }
-
-
 
 /*header @media*/
 @media(max-width: 1000px){
-.code-image
-{
+  .code-image
+  {
     display: none;
-    }
+  }
 }
+
 @media(max-width: 800px){
-    .site-btn .site-btn--accent{
-        display: none;
-    }
+  .site-btn .site-btn--accent{
+    display: none;
+  }
 
 }
+
 @media(max-width: 767){
-    .new-getting-started-link{
-        display: block;
-        background: linear-gradient(90deg, #a485f2, #7fb5ff);
-        color: #fff;
-        box-shadow: 0 20px 30px rgba(125, 147, 178, .3);
-        border: none;
-        border-radius: 8px;
-        font-size: 16px;
-        line-height: 16px;
-        padding: 15px 32px;
-        text-align: center;
-        margin-top: 15px;
-        font-size: 16px;
-        line-height: 16px;
-        padding: 6px 32px;
-        text-align: center;
-        height: auto;
-        border-radius: 8px;
-        width: 143px;
-    }
+  .new-getting-started-link{
+    display: block;
+    background: linear-gradient(90deg, #a485f2, #7fb5ff);
+    color: #fff;
+    box-shadow: 0 20px 30px rgba(125, 147, 178, .3);
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 16px;
+    line-height: 16px;
+    padding: 6px 32px;
+    text-align: center;
+    height: auto;
+    border-radius: 8px;
+    width: 143px;
+  }
 
 }
+
 @media(min-width: 768px){
-    .new-getting-started-link{
-        display: none;
-    }
+  .new-getting-started-link{
+    display: none;
+  }
 
 }
 
 @media(max-width: 1024px) {
-     .menu__logo-title {
-        display: none;
-    }
+  .menu__logo-title {
+    display: none;
+  }
 }
 
 
 @media(max-width: 500px) {
-    .menu__logo-title
-    {
-        margin-top: -79px;
-        margin-left: 68px;
-    }
+  .menu__logo-title
+  {
+    margin-top: -79px;
+    margin-left: 68px;
+  }
 }
 
 @media(max-width: 500px) {
-    .svg-logo
-    {
-        margin-bottom: 10px;
-    }
+  .svg-logo
+  {
+    margin-bottom: 10px;
+  }
 }
 
 
 /*body*/
 
-
 /* component cards */
-
-
 .features .features__title
 {
-    font-size: 26px;
-    width: 100%;
-    height: 30px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+  font-size: 26px;
+  width: 100%;
+  height: 30px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .features__card .icon
 {
-    font-size: 80px;
-    color: #7d93b2;
+  font-size: 80px;
+  color: #7d93b2;
 }
 
 .features .features__card
 {
-    padding: 60px 10px 40px;
-    cursor: pointer;
-    height: auto;
+  padding: 60px 10px 40px;
+  cursor: pointer;
+  height: auto;
 }
 .component-data
 {
-margin-bottom: 100px;
+  margin-bottom: 100px;
 
 }
 
 #components
 {
-padding-top: 85px;
+  padding-top: 85px;
 }
-
-
 
 /* /component cards */
 
-
-
 .sidebar.sidebar--fixed
 {
-    top: inherit;
-    z-index: 1;
+  top: inherit;
+  z-index: 1;
 }
 
 .sidebar__head
 {
-    font-size: 24px;
-    color: #4c6280;
+  font-size: 24px;
+  color: #4c6280;
 }
 
 .link_to_git
 {
-    float: right;
-    padding-top: 28px;
-    padding-right: 20px;
-    text-align: center;
+  float: right;
+  padding-top: 28px;
+  padding-right: 20px;
+  text-align: center;
 }
 
 .octocat
 {
-    width: 32px;
-    height: 32px;
+  width: 32px;
+  height: 32px;
 }
 
 .sidebar .sidebar__custom
 {
-    line-height: 2px;
-    z-index: 1;
+  line-height: 2px;
+  z-index: 1;
 }
-
-
 
 /*body @media*/
 
 @media (max-width: 990px)
 {
-    .sidebar.sidebar--fixed {
-        position: relative;
-        line-height: 15px;
-        top: 0px;
+  .sidebar.sidebar--fixed {
+    position: relative;
+    line-height: 15px;
+    top: 0px;
 
-    }
+  }
 }
 
 /*footer*/
 
 .footer-image {
-    font-size: 35px;
-    margin-right:  auto;
-    margin-left: auto;
-    vertical-align: middle;
-    /* padding-left: 149px; */
-    color: #a485f2;
+  font-size: 35px;
+  margin-right:  auto;
+  margin-left: auto;
+  vertical-align: middle;
+  /* padding-left: 149px; */
+  color: #a485f2;
 }
 
 
@@ -247,89 +236,84 @@ padding-top: 85px;
 
 /* misc */
 .octorick{
-align-content: center;
-    width: 700px;
-    height: 679px;
-    margin-left: 435px;
+  align-content: center;
+  width: 700px;
+  height: 679px;
+  margin-left: 435px;
 }
+
 @media(max-width: 1164px){
-
-
-    .octorick{
-        margin-left: 0px;
-        width: 90%;
-    }
+  .octorick{
+    margin-left: 0px;
+    width: 90%;
+  }
 }
 
 @media(max-width: 600px){
-
-
-    .octorick{
-        margin-left: 0px;
-        width: 100%;
-        height: 300px;
-    }
+  .octorick{
+    margin-left: 0px;
+    width: 100%;
+    height: 300px;
+  }
 }
 
-/** getting started style **/
+
 .getting-started-githublink a
 {
-    /* float: right; */
-    /* padding-right: 10px; */
-    position:  absolute;
-    padding-left: -47px;
-    /* margin-right: 89px; */
-    right: 96px;
-    width: 172px;
+  position:  absolute;
+  padding-left: -47px;
+  right: 96px;
+  width: 172px;
 }
 
 .getting-started-githublink
 {
-    margin-left: 860px;
+  margin-left: 860px;
 }
+
 .getting-started .content-component.component-data.container
 {
-    border-radius: 3px;
-    /* border: 1px solid #dfe2e5; */
-    padding-bottom: 40px;
+  border-radius: 3px;
+  /* border: 1px solid #dfe2e5; */
+  padding-bottom: 40px;
 }
 
 .content-component.component-data.container table
 {
-    display: block;
-    width: 100%;
-    overflow: auto;
-    border-spacing: 0;
-    border-collapse: collapse;
-    font-size: 16px;
-    line-height: 1.5;
+  display: block;
+  width: 100%;
+  overflow: auto;
+  border-spacing: 0;
+  border-collapse: collapse;
+  font-size: 16px;
+  line-height: 1.5;
 }
 
 .content-component.component-data.container table tr
 {
-    background-color: #fff;
-    border-top: 1px solid #c6cbd1;
+  background-color: #fff;
+  border-top: 1px solid #c6cbd1;
 }
 
 .content-component.component-data.container table th
 {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
-    font-weight: 600;
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
+  font-weight: 600;
 }
 
 .content-component.component-data.container table tbody {
-    display: table-row-group;
-    vertical-align: middle;
-    border-color: inherit;
+  display: table-row-group;
+  vertical-align: middle;
+  border-color: inherit;
 }
 
 .content-component.component-data.container table tr:nth-child(2n) {
-    background-color: #f6f8fa;
+  background-color: #f6f8fa;
 }
 
 .content-component.component-data.container table td
 {
-    padding: 6px 13px;
-    border: 1px solid #dfe2e5;
+  padding: 6px 13px;
+  border: 1px solid #dfe2e5;
 }

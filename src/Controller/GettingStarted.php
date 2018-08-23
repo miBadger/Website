@@ -20,10 +20,8 @@ class GettingStarted implements ControllerInterface
     public function mibadgerReadmeAction()
     {
         $page = new Page();
-
         $repositoryLink = 'https://github.com/mibadger/miBadger/';
         $page->setTitle("getting started!");
-
         return View::get(__DIR__ . '/../View/GettingStarted.php', [
             'page' => $page,
             'name' => null,
@@ -32,6 +30,4 @@ class GettingStarted implements ControllerInterface
             'docLink' => "https://github.com/miBadger/miBadger/"
         ]);
     }
-
-
 }

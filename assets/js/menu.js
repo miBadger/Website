@@ -1,5 +1,4 @@
 'use strict';
-
 //Fixed-top menu
 function fixedHeader() {
   var ww = $(window).scrollTop();
@@ -11,10 +10,7 @@ function fixedHeader() {
     $('.mobile-menu').removeClass('mobile-menu--scroll');
   }
 }
-
 fixedHeader();
 $(window).on('scroll', function () {
   fixedHeader();
 });
-
-
