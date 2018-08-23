@@ -1,12 +1,17 @@
 
-/**
- * This file is part of the miBadger package.
- *
- * @author Barry Lagerburg barrytwee@gmail.com
- * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
- */
 
 /*general*/
+h1 {
+    color: #4c6280;
+}
+h3{
+  margin-top: 15px;
+  margin-bottom: 5px;
+}
+
+a{
+  color: #2a75e6;
+}
 @font-face {
     font-family: 'IcoMoon-Ultimate';
     src: url('../fonts/IcoMoon-Ultimate.ttf') format('truetype');
@@ -23,14 +28,12 @@
 .code-image
 {
     float: right;
-    width: 42%;
-    margin-top: -312px;
-    
+    width: 60%;
+    /* margin-top: -400px; */
 }
 
 .menu__logo {
     bottom: 23px;
-
 }
 
 .header-home .header-home__btns-mobile {
@@ -84,7 +87,7 @@
 
 }
 @media(max-width: 767){
-    .new-getting-started-link{ 
+    .new-getting-started-link{
         display: block;
         background: linear-gradient(90deg, #a485f2, #7fb5ff);
         color: #fff;
@@ -107,7 +110,7 @@
 
 }
 @media(min-width: 768px){
-    .new-getting-started-link{ 
+    .new-getting-started-link{
         display: none;
     }
 
@@ -121,15 +124,15 @@
 
 
 @media(max-width: 500px) {
-    .menu__logo-title 
+    .menu__logo-title
     {
         margin-top: -79px;
-        margin-left: 68px;    
+        margin-left: 68px;
     }
 }
 
 @media(max-width: 500px) {
-    .svg-logo 
+    .svg-logo
     {
         margin-bottom: 10px;
     }
@@ -182,19 +185,18 @@ padding-top: 85px;
 
 
 .sidebar.sidebar--fixed
-{ 
+{
     top: inherit;
     z-index: 1;
 }
 
-.sidebar__head  
+.sidebar__head
 {
     font-size: 24px;
-    color:cadetblue;
-    
-} 
+    color: #4c6280;
+}
 
-.link_to_git 
+.link_to_git
 {
     float: right;
     padding-top: 28px;
@@ -202,13 +204,13 @@ padding-top: 85px;
     text-align: center;
 }
 
-.octocat 
+.octocat
 {
     width: 32px;
     height: 32px;
 }
 
-.sidebar .sidebar__custom 
+.sidebar .sidebar__custom
 {
     line-height: 2px;
     z-index: 1;
@@ -218,7 +220,7 @@ padding-top: 85px;
 
 /*body @media*/
 
-@media (max-width: 990px) 
+@media (max-width: 990px)
 {
     .sidebar.sidebar--fixed {
         position: relative;
@@ -231,10 +233,12 @@ padding-top: 85px;
 /*footer*/
 
 .footer-image {
-    font-size: 20px;
-    margin-right: 20px;
+    font-size: 35px;
+    margin-right:  auto;
+    margin-left: auto;
     vertical-align: middle;
-    padding-left: 149px;
+    /* padding-left: 149px; */
+    color: #a485f2;
 }
 
 
@@ -249,7 +253,7 @@ align-content: center;
     margin-left: 435px;
 }
 @media(max-width: 1164px){
-    
+
 
     .octorick{
         margin-left: 0px;
@@ -258,7 +262,7 @@ align-content: center;
 }
 
 @media(max-width: 600px){
-    
+
 
     .octorick{
         margin-left: 0px;
@@ -270,7 +274,13 @@ align-content: center;
 /** getting started style **/
 .getting-started-githublink a
 {
-    padding-left: 1000px;
+    /* float: right; */
+    /* padding-right: 10px; */
+    position:  absolute;
+    padding-left: -47px;
+    /* margin-right: 89px; */
+    right: 96px;
+    width: 172px;
 }
 
 .getting-started-githublink
@@ -280,7 +290,7 @@ align-content: center;
 .getting-started .content-component.component-data.container
 {
     border-radius: 3px;
-    border: 1px solid #dfe2e5;
+    /* border: 1px solid #dfe2e5; */
     padding-bottom: 40px;
 }
 
@@ -301,7 +311,7 @@ align-content: center;
     border-top: 1px solid #c6cbd1;
 }
 
-.content-component.component-data.container table th 
+.content-component.component-data.container table th
 {
     padding: 6px 13px;
     border: 1px solid #dfe2e5;

@@ -568,7 +568,7 @@ article, aside, footer, header, nav, section {
 }
 
 h1 {
-  font-size: 2em;
+  font-size: 4em;
   margin: .67em 0
 }
 
@@ -1327,7 +1327,7 @@ h4 {
 
 .features {
     text-align: center;
-   
+
 }
 .features div{
     margin-bottom: 40px;

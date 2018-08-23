@@ -20,8 +20,8 @@
                     <p class="menu__logo-title">miBadger</p>
                 	</a>
             </div>
-            
-            <div class="col-4 col-t-12 col-m-12">
+
+            <div class="col-8">
                 <nav class="menu__left-nav d-l-none">
                     <ul>
                         <li><a href="/getting-started/" class="site-btn site-btn--accent">Get started</a></li>
@@ -61,7 +61,7 @@
     <button type="button" class="mobile-menu__close">
 			<span><i class="mdi mdi-close" aria-hidden="true"></i></span>
     </button>
-    
+
 </div>
 
 <!--Mobile menu-->

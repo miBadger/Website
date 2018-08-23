@@ -1,17 +1,6 @@
-<?php
-
-/**
- * This file is part of the miBadger package.
- *
- * @author Michael Webbers <michael@webbers.io>
- * @license http://opensource.org/licenses/Apache-2.0 Apache v2 License
- */
-
-?>
-
-    <!doctype html>
+<!doctype html>
     <html>
-        
+
     <head>
         <title>
             <?php echo $title; ?> | miBadger documentation
@@ -25,7 +14,7 @@
         <link rel="stylesheet" href="/assets/css/violet-gradient.css">
         <link rel="stylesheet" href="/assets/css/custom.css">
         <link rel="stylesheet" href="/assets/css/ico-moon.css">
-        
+
     </head>
 
     <body>
