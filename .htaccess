@@ -13,4 +13,3 @@
 	RewriteRule . index.php [L]
 </IfModule>
 
-#modpagespeed off

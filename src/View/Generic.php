@@ -1,6 +1,9 @@
 <?php
+
 use miBadger\Mvc\View;
+
 echo View::get(__DIR__ . '/Header.php', ['title' => 'An error occured']);
+
 ?>
 
 <div class="container">

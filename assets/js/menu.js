@@ -1,5 +1,6 @@
 'use strict';
-//Fixed-top menu
+
+
 function fixedHeader() {
   var ww = $(window).scrollTop();
   if (ww > 0) {
@@ -10,7 +11,9 @@ function fixedHeader() {
     $('.mobile-menu').removeClass('mobile-menu--scroll');
   }
 }
+
 fixedHeader();
-$(window).on('scroll', function () {
+
+$(window).on('scroll', function() {
   fixedHeader();
 });

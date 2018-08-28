@@ -1,3 +1,5 @@
-# miBadger boilerplate
+# miBadger
 
-This repository contains a bare-bones miBadger setup.
+less than a frame work more then a libary.
+
+This is the website part of mibadger.

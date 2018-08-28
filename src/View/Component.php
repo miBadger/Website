@@ -1,21 +1,27 @@
 <?php
+
 use miBadger\Mvc\View;
+
 echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]);
 echo View::get(__DIR__ . '/MainMenu.php');
+
 ?>
 
 <header class="header-home col-12 ">
 </header>
 
 <div class="col-3 col-t-12">
-  <?php if($name !== null){ ?>
+
+  <?php if($name !== null): ?>
     <nav class="sidebar sidebar--fixed ">
       <ul class="sidebar__list">
         <li class="sidebar__item sidebar__custom sidebar__head">
           <?php echo  $name; ?>
         </li>
-        <?php for ($i = 0; $i < count($navItems); $i++):
-          $navItem = $navItems[$i]; ?>
+        <?php
+          for ($i = 0; $i < count($navItems); $i++):
+            $navItem = $navItems[$i];
+        ?>
           <li class="sidebar__item sidebar__custom">
             <a href='/<?php echo $name ?>/<?php echo $navItem; ?>/'>
               <?php echo $navItem; ?>
@@ -24,13 +30,13 @@ echo View::get(__DIR__ . '/MainMenu.php');
         <?php endfor; ?>
       </ul>
     </nav>
-  <?php  } ?>
+  <?php endif; ?>
 </div>
 <div class="content-component component-data container col-6 ">
   <?php
-  $homepage = file_get_contents($docUrl);
-  $Parsedown = new Parsedown();
-  echo $Parsedown->text($homepage);
+    $homepage = file_get_contents($docUrl);
+    $Parsedown = new Parsedown();
+    echo $Parsedown->text($homepage);
   ?>
 </div>
 

@@ -8,16 +8,12 @@ use miBadger\Mvc\View;
 use miBadger\Http\ServerResponse;
 use miBadger\Http\ServerResponseException;
 
-/**
-* The Component class.
-*
-* @since 1.0.0
-*/
+
 class Component implements ControllerInterface
 {
-  /**
-  * this action returns the readme contents.
-  */
+  const CACHE_TIMEOUT = 7200;
+
+
   public function readmeAction($name)
   {
     $page = new Page();
@@ -29,6 +25,7 @@ class Component implements ControllerInterface
       $repositoryDocsList = $client->api('repo')->contents()->show('miBadger', $componentRepositoryName,'docs','master');
     } catch(\Github\Exception\ApiLimitExceedException $e ){
       return View::get(__DIR__ . '/../View/serverdown.php');
+
     } catch (\Github\Exception\RuntimeException $e)  {
       throw new ServerResponseException( new ServerResponse(404) );
     }
@@ -44,8 +41,10 @@ class Component implements ControllerInterface
 
     $repositoryRootContent = 'https://raw.githubusercontent.com/miBadger/miBadger.'.$name.'/master/README.md';
     $docUrl = $repositoryRootContent;
+
     $repositoryLink = 'https://github.com/mibadger/miBadger.' . $name;
     $page->setTitle($name);
+
     $docLink = 'https://github.com/miBadger/miBadger.'.$name.'/blob/master/README.md';
 
     return View::get(__DIR__ . '/../View/Component.php', [
@@ -56,19 +55,23 @@ class Component implements ControllerInterface
       'docLink' => $docLink
     ]);
   }
+
+
   /**
   * Retrieve the miBadger component's data from GitHub
   */
   public function docsAction($name, $doc)
   {
     $file = __DIR__."/../../temp/".$name;
+
     $page = new Page();
     $client = new \Github\Client();
     $time = time();
+
     $lastModified = filemtime($file);
     $componentRepositoryName = 'mibadger.' . $name;
 
-    if (file_exists($file) == true && $lastModified - $time > 7200 ){
+    if (file_exists($file) == true && $lastModified - $time > self::CACHE_TIMEOUT ){
       $repositoryDocsListCache = file_get_contents(__DIR__."/../../temp/".$name, true );
       $repositoryDocsList = unserialize($repositoryDocsListCache);
     } else {
@@ -80,9 +83,11 @@ class Component implements ControllerInterface
         return View::get(__DIR__ . '/../View/serverdown.php');
       }
     }
+
     $docLink='https://github.com/mibadger/miBadger.'.$name.'/blob/master/src/'.$doc.'.php';
 
     $navItems=[];
+
     for ($i = 0; $i < count($repositoryDocsList); $i++) {
       $repositoryDoc = $repositoryDocsList[$i];
       $docFileName = $repositoryDoc['name'];
@@ -92,6 +97,7 @@ class Component implements ControllerInterface
       if ($docName == $doc) {
         $pageUrl = $docUrl;
       }
+
       array_push($navItems, $docName);
     }
 
@@ -99,6 +105,7 @@ class Component implements ControllerInterface
       $fileForSave = serialize($repositoryDocsList);
       file_put_contents($file,$fileForSave);
     }
+
     $page->setTitle($name);
 
     return View::get(__DIR__ . '/../View/Component.php', [

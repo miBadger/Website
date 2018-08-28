@@ -1,8 +1,10 @@
 <?php
 
 use miBadger\Mvc\View;
+
 echo View::get(__DIR__ . '/Header.php', ['title' => $page->getTitle()]);
 echo View::get(__DIR__ . '/MainMenu.php');
+
 ?>
 
 <header class="header-home col-12 ">
@@ -27,11 +29,16 @@ echo View::get(__DIR__ . '/MainMenu.php');
 
 <div class="getting-started">
   <div class="content-component component-data container col-6 ">
+
     <?php
-    $homepage = file_get_contents($docUrl);
-    $Parsedown = new Parsedown();
-    echo $Parsedown->text($homepage);
+
+      $parsedown = new Parsedown();
+      $homepage = file_get_contents($docUrl);
+
+      echo $parsedown->text($homepage);
+
     ?>
+
   </div>
 </div>
 

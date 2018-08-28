@@ -1,4 +1,5 @@
 <?php
+
 namespace miBadger\Website\Controller;
 
 use miBadger\Website\Model\Page;
@@ -7,21 +8,16 @@ use miBadger\Mvc\View;
 use miBadger\Http\ServerResponse;
 use miBadger\Http\ServerResponseException;
 
-/**
- * The Component class.
- *
- * @since 1.0.0
- */
+
 class GettingStarted implements ControllerInterface
 {
-    /**
-     * this action returns the readme contents.
-     */
     public function mibadgerReadmeAction()
     {
         $page = new Page();
-        $repositoryLink = 'https://github.com/mibadger/miBadger/';
         $page->setTitle("getting started!");
+
+        $repositoryLink = 'https://github.com/mibadger/miBadger/';
+
         return View::get(__DIR__ . '/../View/GettingStarted.php', [
             'page' => $page,
             'name' => null,
